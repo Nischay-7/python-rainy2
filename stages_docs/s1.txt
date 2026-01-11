@@ -1,0 +1,108 @@
+Stage 1: Indentation Essentials - Understanding Python's Code Structure
+
+Learn how Python's interpreter works and master the critical role of indentation in Python code.
+
+
+FIRST PRINCIPLES FIRST!
+
+
+THE PYTHON INTERPRETER
+
+Python is an interpreted language.
+
+This means that Python code is not converted into an executable first. Instead, another program called an Interpreter reads the code and executes it step by step.
+
+This is exactly what happens:
+
+1. Python compiles your code to bytecode (.pyc files).
+2. The bytecode is interpreted and executed instruction by instruction.
+
+So, Python is bytecode-compiled but interpreted at runtime.
+
+Bytecode is set of low-level instructions meant for the Python interpreter, not for the CPU.
+
+This comes with its pros and cons.
+
+Pros:
+- No compilation → faster development.
+- Easier debugging.
+- Highly portable - same .py file can run anywhere with Python installed.
+
+Cons:
+- Slower execution compared to compiled languages.
+- Errors appear only when faulty line is reached.
+
+Python source code is stored in file with .py suffix.
+
+
+INDENTATION
+
+In Python, indentation is how you tell what code belongs together. Indentation simply means using of tabs or spaces to group code. Other languages use { } braces.
+
+Example:
+
+if True:
+    print("This runs")
+    print("This also runs")
+
+Both print lines run because they are indented i.e grouped under the if.
+
+If you remove indentation:
+
+if True:
+print("This causes an error")
+
+Python gets confused and throws error.
+
+Where indentation is used:
+- inside if, else, elif blocks
+- inside for and while loops
+- inside functions
+- inside classes
+
+So remember this important rule → all lines in the same block must have the same indentation level.
+
+
+TASK DESCRIPTION
+
+Your task is to fix indentation errors in several functions and complete one function.
+
+Open the file project/code_structure.py and follow the TODO comments.
+
+Task 1: Fix the indentation in check_grade() function (if/elif/else blocks)
+- This function should return a grade based on the score
+- Should return "A" for score >= 90
+- Should return "B" for score >= 80
+- Should return "C" for score >= 70
+- Should return "F" otherwise
+- Fix the indentation errors in the if/elif/else blocks so the return statements are properly indented
+
+Task 2: Fix the indentation in print_numbers() function (for loop)
+- This function should print numbers from 1 to n (inclusive)
+- Fix the indentation error in the for loop so the print statement is properly indented inside the loop
+
+Task 3: Fix the indentation in countdown() function (while loop)
+- This function should print a countdown from start to 1, then print "Blast off!"
+- Fix the indentation errors in the while loop so the print and assignment statements are properly indented inside the loop
+- Note: "Blast off!" should print after the while loop completes (not inside the loop)
+
+Task 4: Complete the is_even() function by adding the if/else logic with correct indentation
+- This function should return True if number is even, False otherwise
+- A number is even if it is divisible by 2 (number % 2 == 0)
+- Add the if/else logic with correct indentation inside the function
+- Hint: Check if number % 2 == 0, return True if yes, False otherwise
+
+This will help you understand how Python uses indentation to structure code.
+
+
+HINTS
+
+- All code inside an if/elif/else block must be indented (usually 4 spaces)
+- All code inside a for loop must be indented
+- All code inside a while loop must be indented
+- All code inside a function must be indented (except the function definition line)
+- Use consistent indentation (spaces or tabs, but not both)
+- Python standard is 4 spaces per indentation level
+- Check that your code runs without IndentationError
+
+Good luck!
