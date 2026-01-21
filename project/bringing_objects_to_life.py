@@ -220,7 +220,7 @@ def create_deluxe_coffee_with_chaining(size, coffee_type, syrup1, syrup2, milk):
     """
     # TODO: Create coffee and chain customization methods
     coffee = Coffee(size, coffee_type)
-    coffee.add_syrup(syrup1).add_syrup(syrup2).add_milk(milk).add_whipped_cream()
+    cofee = coffee.add_syrup(syrup1).add_syrup(syrup2).add_milk(milk).add_whipped_cream()
     return coffee
 
 
