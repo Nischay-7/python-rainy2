@@ -80,8 +80,7 @@ class Coffee:
         Hint: Set self.milk_type to the milk_type, then return self
         """
         # TODO: Set milk type and return self
-        if milk_type is not None:
-            self.milk_type = milk_type
+        self.milk_type = milk_type
         return self
     
     def add_whipped_cream(self):
@@ -221,7 +220,6 @@ def create_deluxe_coffee_with_chaining(size, coffee_type, syrup1, syrup2, milk):
     # TODO: Create coffee and chain customization methods
     coffee = create_customized_coffee(size, coffee_type, syrup1, milk)
     coffee.add_syrup(syrup2)
-    coffee.add_whipped_cream()
     return coffee
 
 
