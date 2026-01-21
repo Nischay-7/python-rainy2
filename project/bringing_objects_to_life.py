@@ -35,17 +35,17 @@ class Coffee:
         # self.milk_type = None  # No milk by default
         # self.has_whipped_cream = False
         # self.base_price = 3.0 if size == "small" else (4.0 if size == "medium" else 5.0)
-        if self.size == "small":
-            self.base_price = 3.0
-        elif self.size == "medium":
-            self.base_price = 4.0
-        elif self.size == "large":
-            self.base_price = 5.0
         self.size = size
         self.coffee_type = coffee_type
         self.syrups = []
         self.milk_type = None
         self.has_whipped_cream = False
+        if size == "small":
+            self.base_price = 3.0
+        elif size == "medium":
+            self.base_price = 4.0
+        elif size == "large":
+            self.base_price = 5.0
         
 
     
