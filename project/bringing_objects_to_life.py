@@ -44,7 +44,7 @@ class Coffee:
             self.base_price = 3.0
         elif size == "medium":
             self.base_price = 4.0
-        else:
+        elif size == "large":
             self.base_price = 5.0
 
     
