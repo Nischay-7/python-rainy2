@@ -20,7 +20,8 @@ def create_account(initial_balance):
           Return a list like [initial_balance]
     """
     # TODO: Create and return a list containing the initial_balance
-    pass
+    account = [initial_balance]
+    return account
 
 
 def get_balance(account):
@@ -37,7 +38,7 @@ def get_balance(account):
           Access first element using account[0]
     """
     # TODO: Return the balance from the account list
-    pass
+    return account[0]
 
 
 def deposit(account, amount):
@@ -53,7 +54,7 @@ def deposit(account, amount):
           This modifies the original object - all aliases will see this change!
     """
     # TODO: Add amount to account balance (modify account[0])
-    pass
+    account[0] += amount
 
 
 def withdraw(account, amount):
@@ -68,7 +69,7 @@ def withdraw(account, amount):
           Modify account[0] directly.
     """
     # TODO: Subtract amount from account balance (modify account[0])
-    pass
+    account[0] -= amount
 
 
 def are_same_account(account1, account2):
@@ -83,7 +84,7 @@ def are_same_account(account1, account2):
         True if same account object, False otherwise
     """
     # TODO: Use id() to check if both references point to same object
-    pass
+    return id(account1) == id(account2)
 
 
 def setup_joint_account(initial_balance):
@@ -98,7 +99,10 @@ def setup_joint_account(initial_balance):
         are aliases (references to same object) and are_same is True
     """
     # TODO: Create one account, create alias, verify they're same using id()
-    pass
+    holder1_account = create_account(initial_balance)
+    holder2_account = holder1_account
+    are_same = id(holder1_account) == id(holder2_account)
+    return (holder1_account, holder2_account, are_same)
 
 
 def verify_joint_account_deposit(account1, account2, deposit_amount):
@@ -114,7 +118,8 @@ def verify_joint_account_deposit(account1, account2, deposit_amount):
         Tuple (balance_via_account1, balance_via_account2) showing both balances after deposit
     """
     # TODO: Deposit via account1, return balances from both references
-    pass
+    deposit(account1, deposit_amount)
+    return (get_balance(account1), get_balance(account2))
 
 
 def close_and_open_new_account(old_account, new_balance):
@@ -129,7 +134,11 @@ def close_and_open_new_account(old_account, new_balance):
         Tuple (old_id, new_id, are_different) where are_different is True
     """
     # TODO: Get old account id, create new account, get new id, verify different
-    pass
+    old_id = id(old_account)
+    new_account = create_account(new_balance)
+    new_id = id(new_account)
+    are_different = old_id != new_id
+    return (old_id, new_id, are_different)
 
 
 def get_account_type(account):
@@ -143,7 +152,7 @@ def get_account_type(account):
         Type of the account object
     """
     # TODO: Return type using type() function
-    pass
+    return type(account)
 
 
 def verify_account_is_list(account):
@@ -157,7 +166,7 @@ def verify_account_is_list(account):
         True if account is a list, False otherwise
     """
     # TODO: Use isinstance() to check if account is a list
-    pass
+    return isinstance(account, list)
 
 
 def check_account_exists(account):
@@ -171,7 +180,7 @@ def check_account_exists(account):
         True if account is None, False otherwise
     """
     # TODO: Use 'is None' to check
-    pass
+    return account is None
 
 
 def demonstrate_dynamic_account_holder():
@@ -183,7 +192,11 @@ def demonstrate_dynamic_account_holder():
     """
     # TODO: Assign holder = 12345 (account number), get type, 
     # reassign holder = "John Doe", get type, return both types
-    pass
+    holder = 12345
+    type_after_int = type(holder)
+    holder = "John Doe"
+    type_after_string = type(holder)
+    return (type_after_int, type_after_string)
 
 
 def get_account_info(account):
@@ -197,5 +210,8 @@ def get_account_info(account):
         Tuple (account_id, account_type, account_balance)
     """
     # TODO: Return id(), type(), and balance of account
-    pass
+    account_id = id(account)
+    account_type = type(account)
+    account_balance = get_balance(account)
+    return (account_id, account_type, account_balance)
 
