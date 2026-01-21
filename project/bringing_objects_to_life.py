@@ -35,17 +35,18 @@ class Coffee:
         # self.milk_type = None  # No milk by default
         # self.has_whipped_cream = False
         # self.base_price = 3.0 if size == "small" else (4.0 if size == "medium" else 5.0)
-        self.size = size
-        self.coffee_type = coffee_type
-        self.syrups = []
-        self.milk_type = None
-        self.has_whipped_cream = False
         if self.size == "small":
             self.base_price = 3.0
         elif self.size == "medium":
             self.base_price = 4.0
         elif self.size == "large":
             self.base_price = 5.0
+        self.size = size
+        self.coffee_type = coffee_type
+        self.syrups = []
+        self.milk_type = None
+        self.has_whipped_cream = False
+        
 
     
     def add_syrup(self, syrup_flavor):
@@ -79,7 +80,8 @@ class Coffee:
         Hint: Set self.milk_type to the milk_type, then return self
         """
         # TODO: Set milk type and return self
-        self.milk_type = milk_type
+        if milk_type is not None:
+            self.milk_type = milk_type
         return self
     
     def add_whipped_cream(self):
