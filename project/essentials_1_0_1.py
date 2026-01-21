@@ -1,55 +1,76 @@
-# TODO: Stage 1 - Indentation Essentials
-# 
-# Instructions:
-# 1. Fix the indentation in check_grade() function (if/elif/else blocks)
-# 2. Fix the indentation in print_numbers() function (for loop)
-# 3. Fix the indentation in countdown() function (while loop)
-# 4. Complete the is_even() function by adding the if/else logic with correct indentation
+# Objective: Build a movie ticket pricing system for a cinema
+# - Child (under 13): $8
+# - Adult (13-64): $12
+# - Senior (65+): $10
+# - Premium days (Friday/Saturday): add $3 surcharge
 
 
-def check_grade(score):
+def calculate_base_price(age):
     """
-    Return a grade based on the score.
-    Should return "A" for score >= 90, "B" for >= 80, "C" for >= 70, "F" otherwise.
+    Calculate base ticket price based on age.
+    
+    Args:
+        age: Customer's age in years
+    
+    Returns:
+        Base ticket price as integer
     """
-    # TODO: Fix the indentation errors in the if/elif/else blocks below
-    if score >= 90:
-    return "A"
-    elif score >= 80:
-    return "B"
-    elif score >= 70:
-    return "C"
+    # TODO: Fix the indentation errors below
+    if age < 13:
+    return 8
+    elif age >= 65:
+    return 10
     else:
-    return "F"
+    return 12
 
 
-def print_numbers(n):
+def is_premium_day(day):
     """
-    Print numbers from 1 to n (inclusive).
+    Check if the day is a premium day (Friday or Saturday).
+    
+    Args:
+        day: Day of week as string (e.g., "Friday", "Monday")
+    
+    Returns:
+        True if premium day, False otherwise
     """
-    # TODO: Fix the indentation error in the for loop below
-    for i in range(1, n + 1):
-    print(i)
+    # TODO: Fix the indentation errors below
+    if day == "Friday" or day == "Saturday":
+    return True
+    else:
+    return False
 
 
-def countdown(start):
+def calculate_total_price(age, day):
     """
-    Print a countdown from start to 1, then print "Blast off!".
+    Calculate total ticket price including premium day surcharge.
+    
+    Args:
+        age: Customer's age in years
+        day: Day of week as string
+    
+    Returns:
+        Total ticket price as integer
     """
-    # TODO: Fix the indentation errors in the while loop below
-    num = start
-    while num > 0:
-    print(num)
-    num = num - 1
-    print("Blast off!")
+    # TODO: Fix the indentation errors below
+    base_price = calculate_base_price(age)
+    if is_premium_day(day):
+    return base_price + 3
+    else:
+    return base_price
 
 
-def is_even(number):
+def get_ticket_category(age):
     """
-    Return True if number is even, False otherwise.
-    A number is even if it is divisible by 2 (number % 2 == 0).
+    Return the ticket category name based on age.
+    
+    Args:
+        age: Customer's age in years
+    
+    Returns:
+        Category as string: "Child", "Senior", or "Adult"
     """
-    # TODO: Complete this function by adding if/else logic with correct indentation
-    # Hint: Check if number % 2 == 0, return True if yes, False otherwise
+    # TODO: Complete this function with correct indentation
+    # Return "Child" if age < 13, "Senior" if age >= 65, "Adult" otherwise
     pass
 
