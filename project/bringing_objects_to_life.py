@@ -109,7 +109,7 @@ class Coffee:
         # TODO: Calculate and return total price
         total_price = self.base_price
         num_syrups = len(self.syrups)
-        total_price += 0.5 * num_syrups
+        total_price += (0.5 * num_syrups)
         if self.milk_type is not None:
             total_price += 0.5
         if self.has_whipped_cream:
@@ -217,7 +217,7 @@ def create_deluxe_coffee_with_chaining(size, coffee_type, syrup1, syrup2, milk):
     Hint: Chain methods: coffee.add_syrup(syrup1).add_syrup(syrup2).add_milk(milk).add_whipped_cream()
     """
     # TODO: Create coffee and chain customization methods
-    coffee = create_simple_coffee(size, coffee_type)
+    coffee = Coffee(size, coffee_type)
     coffee.add_syrup(syrup1).add_syrup(syrup2).add_milk(milk).add_whipped_cream()
     return coffee
 
