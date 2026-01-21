@@ -168,6 +168,7 @@ def create_customized_coffee(size, coffee_type, syrup, milk):
 def create_deluxe_coffee_with_chaining(size, coffee_type, syrup1, syrup2, milk):
     """
     Create a deluxe coffee using method chaining.
+    Deluxe coffee should have whipped cream.
     
     Args:
         size: Size of coffee
