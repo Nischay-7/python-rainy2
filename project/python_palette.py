@@ -389,5 +389,5 @@ def demonstrate_alias_trap():
     l = [1,2,3]
     a = l
     l += [4]
-    plus_equals_keeps_alias = l is not a
+    plus_equals_keeps_alias = l is a
     return (concat_breaks_alias, plus_equals_keeps_alias)
