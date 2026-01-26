@@ -384,10 +384,10 @@ def demonstrate_alias_trap():
     l = [1,2,3]
     a = l
     l = l + [4]
-    concat_breaks_alias = a is l
+    concat_breaks_alias = l is a
 
     l = [1,2,3]
     a = l
     l += [4]
-    plus_equals_keeps_alias = a is l
+    plus_equals_keeps_alias = l is a
     return (concat_breaks_alias, plus_equals_keeps_alias)
