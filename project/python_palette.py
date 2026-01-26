@@ -24,7 +24,7 @@ def create_event_info(name, date, venue):
         Tuple containing (name, date, venue)
     """
     # TODO: Create and return a tuple with the event details
-    pass
+    return (name, date, venue)
 
 
 def is_lineup_ready(performers):
@@ -38,7 +38,7 @@ def is_lineup_ready(performers):
         True if there are performers, False if empty
     """
     # TODO: Use truthiness to check if performers list is non-empty
-    pass
+    return bool(performers)
 
 
 def parse_ticket_price(price_str):
@@ -52,7 +52,7 @@ def parse_ticket_price(price_str):
         Price as a float
     """
     # TODO: Convert the string to a float
-    pass
+    return float(price_str)
 
 
 def parse_stage_number(stage_str, base=10):
@@ -67,7 +67,7 @@ def parse_stage_number(stage_str, base=10):
         Stage number as integer
     """
     # TODO: Convert the string to an integer using the specified base
-    pass
+    return int(stage_str, base)
 
 
 # =============================================================================
@@ -82,7 +82,7 @@ def create_schedule():
         Empty list to hold performers
     """
     # TODO: Return an empty list
-    pass
+    return []
 
 
 def add_to_schedule(schedule, performer):
@@ -94,7 +94,7 @@ def add_to_schedule(schedule, performer):
         performer: Name of performer to add
     """
     # TODO: Add performer to the schedule list
-    pass
+    schedule.append(performer)
 
 
 def get_headliners(schedule, count):
@@ -109,7 +109,7 @@ def get_headliners(schedule, count):
         List of first N performers
     """
     # TODO: Use slicing to get the first count performers
-    pass
+    return schedule[:count]
 
 
 def get_closing_acts(schedule, count):
@@ -124,7 +124,7 @@ def get_closing_acts(schedule, count):
         List of last N performers
     """
     # TODO: Use negative slicing to get the last count performers
-    pass
+    return schedule[-count:-1]
 
 
 def is_performing(schedule, artist):
@@ -139,7 +139,7 @@ def is_performing(schedule, artist):
         True if artist is in schedule, False otherwise
     """
     # TODO: Check membership using the in operator
-    pass
+    return artist in schedule
 
 
 # =============================================================================
@@ -157,7 +157,7 @@ def create_artist_set(artist_list):
         Set of unique artist names
     """
     # TODO: Convert the list to a set
-    pass
+    return set(artist_list)
 
 
 def get_all_performers(stage1_artists, stage2_artists):
@@ -172,7 +172,7 @@ def get_all_performers(stage1_artists, stage2_artists):
         Set of all artists from both stages
     """
     # TODO: Return the union of both sets
-    pass
+    return set(stage1_artists + stage2_artists)
 
 
 def get_crossover_artists(stage1_artists, stage2_artists):
@@ -187,7 +187,7 @@ def get_crossover_artists(stage1_artists, stage2_artists):
         Set of artists appearing on both stages
     """
     # TODO: Return the intersection of both sets
-    pass
+    return set(stage1_artists) & set(stage2_artists)
 
 
 def get_exclusive_to_stage(stage1_artists, stage2_artists):
@@ -202,7 +202,7 @@ def get_exclusive_to_stage(stage1_artists, stage2_artists):
         Set of artists only on stage 1
     """
     # TODO: Return the difference (stage1 - stage2)
-    pass
+    return set(stage1_artists) - set(stage2_artists)
 
 
 def is_subset_lineup(small_lineup, full_lineup):
@@ -217,7 +217,7 @@ def is_subset_lineup(small_lineup, full_lineup):
         True if small_lineup is subset of full_lineup
     """
     # TODO: Check if small_lineup is a subset of full_lineup
-    pass
+    return small_lineup <= full_lineup
 
 
 def lock_lineup(artists):
@@ -231,7 +231,7 @@ def lock_lineup(artists):
         Frozenset of artist names (immutable)
     """
     # TODO: Convert to frozenset
-    pass
+    return frozenset(artists)
 
 
 # =============================================================================
@@ -246,7 +246,7 @@ def create_artist_registry():
         Empty dictionary
     """
     # TODO: Return an empty dictionary
-    pass
+    return {}
 
 
 def register_artist(registry, name, stage):
@@ -259,7 +259,7 @@ def register_artist(registry, name, stage):
         stage: Stage name/number
     """
     # TODO: Add or update the artist's stage in the registry
-    pass
+    registry[name] = stage
 
 
 def get_artist_stage(registry, name):
@@ -274,7 +274,7 @@ def get_artist_stage(registry, name):
         Stage name/number for the artist
     """
     # TODO: Return the stage for the given artist
-    pass
+    return registry[name]
 
 
 def is_registered(registry, name):
@@ -289,7 +289,7 @@ def is_registered(registry, name):
         True if artist is in registry, False otherwise
     """
     # TODO: Check if name is a key in the registry
-    pass
+    return name in registry
 
 
 def remove_artist(registry, name):
@@ -301,7 +301,7 @@ def remove_artist(registry, name):
         name: Artist name to remove
     """
     # TODO: Delete the artist from the registry
-    pass
+    del registry[name]
 
 
 # =============================================================================
@@ -319,7 +319,8 @@ def share_lineup_alias(original):
         Reference to the same list object
     """
     # TODO: Return the original list (creating an alias)
-    pass
+    alias = original
+    return alias
 
 
 def share_lineup_copy(original):
@@ -333,7 +334,7 @@ def share_lineup_copy(original):
         New list with same contents
     """
     # TODO: Return a copy of the list
-    pass
+    return list(original)
 
 
 def extend_with_concat(lineup, new_artists):
@@ -348,7 +349,7 @@ def extend_with_concat(lineup, new_artists):
         New list containing all artists
     """
     # TODO: Use + to concatenate and return the result
-    pass
+    return lineup + new_artists
 
 
 def extend_with_plus_equals(lineup, new_artists):
@@ -363,7 +364,8 @@ def extend_with_plus_equals(lineup, new_artists):
         The same list object (now extended)
     """
     # TODO: Use += to extend the lineup in place, then return it
-    pass
+    lineup += new_artists
+    return lineup
 
 
 def demonstrate_alias_trap():
@@ -379,4 +381,13 @@ def demonstrate_alias_trap():
     # Use + to extend and check if alias sees the change
     # Use += to extend and check if alias sees the change
     # Return tuple showing the behavior difference
-    pass
+    l = [1,2,3]
+    a = l
+    l = l + [4]
+    concat_breaks_alias = a is l
+
+    l = [1,2,3]
+    a = l
+    l += [4]
+    plus_equals_keeps_alias = a is l
+    return (concat_breaks_alias, plus_equals_keeps_alias)
