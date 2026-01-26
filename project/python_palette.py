@@ -172,7 +172,7 @@ def get_all_performers(stage1_artists, stage2_artists):
         Set of all artists from both stages
     """
     # TODO: Return the union of both sets
-    return set(stage1_artists + stage2_artists)
+    return stage1_artists | stage2_artists
 
 
 def get_crossover_artists(stage1_artists, stage2_artists):
