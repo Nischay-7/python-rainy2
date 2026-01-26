@@ -124,7 +124,7 @@ def get_closing_acts(schedule, count):
         List of last N performers
     """
     # TODO: Use negative slicing to get the last count performers
-    return schedule[-1-count:-1]
+    return schedule[-count:]
 
 
 def is_performing(schedule, artist):
